@@ -1,14 +1,12 @@
-package StatePattern;
+package StatePattern.Misunderstood;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import StatePattern.Sensors.Sensor;
-import StatePattern.Sensors.SensorType;
+import StatePattern.Misunderstood.Sensors.Sensor;
+import StatePattern.Misunderstood.Sensors.SensorType;
 
 public class SecuritySystem
 {

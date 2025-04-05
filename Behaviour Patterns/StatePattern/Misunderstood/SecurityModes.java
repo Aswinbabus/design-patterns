@@ -1,4 +1,4 @@
-package StatePattern;
+package StatePattern.Misunderstood;
 
 public enum SecurityModes
 {

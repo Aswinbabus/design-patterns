@@ -1,11 +1,11 @@
-package StatePattern;
+package StatePattern.Misunderstood;
 
 import java.util.Scanner;
 
-import StatePattern.Sensors.DoorSensor;
-import StatePattern.Sensors.MotionSensor;
-import StatePattern.Sensors.SensorDataController;
-import StatePattern.Sensors.SensorType;
+import StatePattern.Misunderstood.Sensors.DoorSensor;
+import StatePattern.Misunderstood.Sensors.MotionSensor;
+import StatePattern.Misunderstood.Sensors.SensorDataController;
+import StatePattern.Misunderstood.Sensors.SensorType;
 
 public class UserInterface
 {

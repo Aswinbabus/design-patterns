@@ -1,6 +1,6 @@
-package StatePattern;
+package StatePattern.Misunderstood;
 
-import StatePattern.Sensors.SensorType;
+import StatePattern.Misunderstood.Sensors.SensorType;
 
 public class ArmedWithAwayMode implements SecurityMode
 {

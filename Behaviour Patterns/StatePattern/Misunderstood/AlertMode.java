@@ -1,6 +1,4 @@
-package StatePattern;
-
-import StatePattern.Sensors.SensorType;
+package StatePattern.Misunderstood;
 
 public class AlertMode implements SecurityMode
 {

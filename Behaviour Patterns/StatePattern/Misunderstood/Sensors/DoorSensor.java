@@ -1,6 +1,6 @@
-package StatePattern.Sensors;
+package StatePattern.Misunderstood.Sensors;
 
-import StatePattern.SecuritySystem;
+import StatePattern.Misunderstood.SecuritySystem;
 
 public class DoorSensor extends Sensor
 {
