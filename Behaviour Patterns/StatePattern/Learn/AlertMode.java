@@ -2,16 +2,29 @@ package StatePattern.Learn;
 
 public class AlertMode extends SecurityMode
 {
-	// allowing only to change to disarmed mode by user
+
 	@Override
-	void onStateChange(SecurityContext context, SecurityMode newState)
+	void disArmedMode(SecurityContext context)
 	{
-		 if(newState.getModeType() == SecurityModes.DISARMED) {
-			 context.setCurrentMode(newState);
-		 }
-		 else {
-			 System.out.println("Not Allowed");
-		 }
+		context.setCurrentMode(new DisArmedMode());
+	}
+
+	@Override
+	void armedWithHome(SecurityContext securityContext)
+	{
+		System.out.println("Not Possible");
+	}
+
+	@Override
+	void armedWithAway(SecurityContext securityContext)
+	{
+		System.out.println("Not Possible");
+	}
+
+	@Override
+	void alertMode(SecurityContext securityContext)
+	{
+		System.out.println("Already in Alert Mode");
 	}
 
 	@Override

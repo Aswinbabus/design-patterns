@@ -6,10 +6,22 @@ public class SecurityContext
 
 	private SecurityMode currentMode;
 
-
-	void onStateChange(SecurityMode mode) {
-		currentMode.onStateChange(this,mode);
+	void disArmedMode() {
+		currentMode.disArmedMode(this);
 	}
+
+	void armedWithHome() {
+		currentMode.armedWithHome(this);
+	}
+
+	void armedWithAway() {
+		currentMode.armedWithAway(this);
+	}
+
+	void alertMode(){
+		currentMode.alertMode(this);
+	}
+
 
 	void onMotionDetected() {
 		currentMode.handleMotionDetected(this);

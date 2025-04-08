@@ -6,15 +6,27 @@ public class ArmedWithAway extends SecurityMode
 
 
 	@Override
-	void onStateChange(SecurityContext context, SecurityMode newState)
+	void disArmedMode(SecurityContext context)
 	{
-		if(newState.getModeType() == SecurityModes.ARMED_WITH_AWAY) {
-			System.out.println("Already in Away Mode");
-		}
-		else if(newState.getModeType() == SecurityModes.ARMED_WITH_HOME || newState.getModeType() == SecurityModes.DISARMED)
-		{
-			context.setCurrentMode(newState);
-		}
+		context.setCurrentMode(new DisArmedMode());
+	}
+
+	@Override
+	void armedWithHome(SecurityContext securityContext)
+	{
+      securityContext.setCurrentMode(new ArmedWithHome());
+	}
+
+	@Override
+	void armedWithAway(SecurityContext securityContext)
+	{
+		System.out.println("Already in alert Away Mode");
+	}
+
+	@Override
+	void alertMode(SecurityContext securityContext)
+	{
+		System.out.println("Not Possible");
 	}
 
 	@Override

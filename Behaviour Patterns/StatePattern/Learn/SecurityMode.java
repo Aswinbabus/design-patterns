@@ -3,9 +3,12 @@ package StatePattern.Learn;
 public abstract class SecurityMode
 {
 	 // Whether Switching from current state to newState is Allowed or Not (State Transition Logic)
-     abstract void onStateChange(SecurityContext context,SecurityMode newState);
+	abstract void disArmedMode(SecurityContext context);
+    abstract void armedWithHome(SecurityContext securityContext);
+	abstract void armedWithAway(SecurityContext securityContext);
+	abstract void alertMode(SecurityContext securityContext);
 
-	 // Modes can override if they need any mode initialization steps
+	// Modes can override if they need any mode initialization steps
 	 void initializeMode(){
 
 	 }

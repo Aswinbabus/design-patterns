@@ -2,16 +2,30 @@ package StatePattern.Learn;
 
 public class ArmedWithHome extends SecurityMode
 {
+
+
 	@Override
-	public void onStateChange(SecurityContext context, SecurityMode newState)
+	void disArmedMode(SecurityContext context)
 	{
-		if(newState.getModeType() == SecurityModes.ARMED_WITH_HOME) {
-			System.out.println("Already in Home Mode");
-		}
-		else if(newState.getModeType() == SecurityModes.ARMED_WITH_AWAY || newState.getModeType() == SecurityModes.DISARMED)
-		{
-			context.setCurrentMode(newState);
-		}
+		context.setCurrentMode(new DisArmedMode());
+	}
+
+	@Override
+	void armedWithHome(SecurityContext securityContext)
+	{
+		System.out.println("Already in Home Mode");
+	}
+
+	@Override
+	void armedWithAway(SecurityContext securityContext)
+	{
+		 securityContext.setCurrentMode(new ArmedWithAway());
+	}
+
+	@Override
+	void alertMode(SecurityContext securityContext)
+	{
+		System.out.println("Not possible only via sensor detection");
 	}
 
 	@Override
