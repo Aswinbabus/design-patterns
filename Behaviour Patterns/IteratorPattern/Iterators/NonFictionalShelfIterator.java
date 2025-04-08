@@ -1,11 +1,14 @@
-package IteratorPattern;
+package IteratorPattern.Iterators;
 
-public class NonFictionalShelf implements ShelfIterator
+import IteratorPattern.Book;
+import IteratorPattern.ShelfIterator;
+
+public class NonFictionalShelfIterator implements ShelfIterator
 {
 	private Book[] books;
 	private int currBook;
 
-	public NonFictionalShelf(Book[] books)
+	public NonFictionalShelfIterator(Book[] books)
 	{
 		this.books = books;
 		currBook = 0;
@@ -37,5 +40,17 @@ public class NonFictionalShelf implements ShelfIterator
 
 		return null;
 
+	}
+
+	@Override
+	public boolean hasNext()
+	{
+		return currBook < books.length - 1;
+	}
+
+	@Override
+	public boolean hasPrev()
+	{
+		return currBook > 0;
 	}
 }

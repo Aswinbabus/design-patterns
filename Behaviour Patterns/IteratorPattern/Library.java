@@ -1,31 +1,45 @@
 package IteratorPattern;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import IteratorPattern.Iterators.UnifiedIterator;
+
 public class Library
 {
 
-	private FictionalShelf fictionalShelf;
-	private NonFictionalShelf nonFictionalShelf;
-	private SciFictionShelf sciFictionShelf;
 
-	public Library(FictionalShelf fictionalShelf, NonFictionalShelf nonFictionalShelf, SciFictionShelf sciFictionShelf)
+	private List<ShelfIterator> totalIterator;
+	private final ShelfIterator fictionalShelfIterator;
+	private final ShelfIterator nonFictionalShelfIterator;
+	private final ShelfIterator sciFictionShelfIterator;
+
+	public Library(ShelfIterator fictionalShelfIterator, ShelfIterator nonFictionalShelfIterator, ShelfIterator sciFictionShelfIterator)
 	{
-		this.fictionalShelf = fictionalShelf;
-		this.nonFictionalShelf = nonFictionalShelf;
-		this.sciFictionShelf = sciFictionShelf;
+		this.fictionalShelfIterator = fictionalShelfIterator;
+		this.nonFictionalShelfIterator = nonFictionalShelfIterator;
+		this.sciFictionShelfIterator = sciFictionShelfIterator;
+		totalIterator = new ArrayList<>(Arrays.asList(fictionalShelfIterator,nonFictionalShelfIterator,sciFictionShelfIterator));
 	}
 
-	public FictionalShelf getFictionalShelf()
+	public ShelfIterator getFictionalShelf()
 	{
-		return fictionalShelf;
+		return fictionalShelfIterator;
 	}
 
-	public NonFictionalShelf getNonFictionalShelf()
+	public ShelfIterator getNonFictionalShelf()
 	{
-		return nonFictionalShelf;
+		return nonFictionalShelfIterator;
 	}
 
-	public SciFictionShelf getSciFictionShelf()
+	public ShelfIterator getSciFictionShelf()
 	{
-		return sciFictionShelf;
+		return sciFictionShelfIterator;
+	}
+
+	public ShelfIterator getUnifiedIterator()
+	{
+		return new UnifiedIterator(totalIterator);
 	}
 }

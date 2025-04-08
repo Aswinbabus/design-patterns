@@ -1,17 +1,18 @@
-package IteratorPattern;
+package IteratorPattern.Iterators;
 
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.ListIterator;
 
-public class SciFictionShelf implements ShelfIterator
+import IteratorPattern.Book;
+import IteratorPattern.ShelfIterator;
+
+public class SciFictionShelfIterator implements ShelfIterator
 {
 
 	private LinkedList<Book> bookList;
 	private ListIterator<Book> currBook;
 
-	public SciFictionShelf(LinkedList<Book> bookList)
+	public SciFictionShelfIterator(LinkedList<Book> bookList)
 	{
 		this.bookList = bookList;
 		currBook = bookList.listIterator();
@@ -35,5 +36,17 @@ public class SciFictionShelf implements ShelfIterator
 		}
 
 		return null;
+	}
+
+	@Override
+	public boolean hasNext()
+	{
+		return currBook.hasNext();
+	}
+
+	@Override
+	public boolean hasPrev()
+	{
+		return currBook.hasPrevious();
 	}
 }

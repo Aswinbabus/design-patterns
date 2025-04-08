@@ -1,13 +1,16 @@
-package IteratorPattern;
+package IteratorPattern.Iterators;
 
 import java.util.List;
 
-public class FictionalShelf implements ShelfIterator
+import IteratorPattern.Book;
+import IteratorPattern.ShelfIterator;
+
+public class FictionalShelfIterator implements ShelfIterator
 {
 	private final List<Book> bookList;
     private int currBook;
 
-	public FictionalShelf(List<Book> bookList)
+	public FictionalShelfIterator(List<Book> bookList)
 	{
 		this.bookList = bookList;
 		currBook = 0;
@@ -35,5 +38,17 @@ public class FictionalShelf implements ShelfIterator
 
 		return null;
 
+	}
+
+	@Override
+	public boolean hasNext()
+	{
+		return currBook < bookList.size() - 1;
+	}
+
+	@Override
+	public boolean hasPrev()
+	{
+		return currBook > 0;
 	}
 }

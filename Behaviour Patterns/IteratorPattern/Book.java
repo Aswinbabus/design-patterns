@@ -4,12 +4,16 @@ import java.time.Year;
 
 public class Book
 {
+	private int bookId;
+	private String name;
 	private String title;
 	private String author;
 	private int year;
 
-	public Book(String title, String author, int year)
+	public Book(int bookId,String name,String title, String author, int year)
 	{
+		this.bookId = bookId;
+		this.name = name;
 		this.title = title;
 		this.author = author;
 		this.year = year;
@@ -30,9 +34,19 @@ public class Book
 		return year;
 	}
 
+	public int getBookId()
+	{
+		return bookId;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
 	@Override
 	public String toString()
 	{
-		return "Book{" + "title='" + title + '\'' + ", author='" + author + '\'' + ", year=" + year + '}';
+		return "Book{" + "bookId=" + bookId + ", name='" + name + '\'' + ", title='" + title + '\'' + ", author='" + author + '\'' + ", year=" + year + '}';
 	}
 }

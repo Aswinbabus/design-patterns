@@ -1,9 +1,15 @@
 package IteratorPattern;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import IteratorPattern.Iterators.FictionalShelfIterator;
+import IteratorPattern.Iterators.NonFictionalShelfIterator;
+import IteratorPattern.Iterators.SciFictionShelfIterator;
+import IteratorPattern.Shelfs.FictionalShelf;
+import IteratorPattern.Shelfs.NonFictionalShelf;
+import IteratorPattern.Shelfs.SciFictionShelf;
 
 public class Librarian
 {
@@ -11,18 +17,18 @@ public class Librarian
 	public static void main(String[] args)
 	{
 
-		Book book1 = new Book("book1","author1",2000);
-		Book book2 = new Book("book1","author1",2000);
-		Book book3 = new Book("book1","author1",2000);
-		Book book4 = new Book("book1","author1",2000);
+		Book book1 = new Book(1,"name1","book1","author1",2000);
+		Book book2 = new Book(2,"name1","book1","author1",2000);
+		Book book3 = new Book(3,"name1","book1","author1",2000);
+		Book book4 = new Book(4,"name1","book1","author1",2000);
 
 		List list = Arrays.asList(book1,book2,book3,book4);
 
 		FictionalShelf fictionalShelf = new FictionalShelf(list);
-		NonFictionalShelf nonFictionalShelf = new NonFictionalShelf(new Book[]{book1,book2,book3});
-		SciFictionShelf sciFictionShelf = new SciFictionShelf(new LinkedList<>(list));
+		NonFictionalShelf nonFictionalShelf = new NonFictionalShelf(list);
+		SciFictionShelf sciFictionShel = new SciFictionShelf(list);
 
-		Library library = new Library(fictionalShelf,nonFictionalShelf,sciFictionShelf);
+		Library library = new Library(fictionalShelf.getShelfIterator(), nonFictionalShelf.getShelfIterator(), sciFictionShel.getShelfIterator());
 
 		assert library.getFictionalShelf().nextBook() == book2;
 		assert library.getFictionalShelf().prevBook() == book1;
