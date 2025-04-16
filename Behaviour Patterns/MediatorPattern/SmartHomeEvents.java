@@ -1,0 +1,11 @@
+package MediatorPattern;
+
+
+enum SmartHomeEvents
+{
+	VACATION_MODE_ENABLED,
+	SECURITY_SYSTEM_DISARMED,
+	THERMOSTAT_COMFORT_MODE
+
+}
+
