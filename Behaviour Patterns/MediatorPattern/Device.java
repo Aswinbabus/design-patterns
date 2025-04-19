@@ -11,9 +11,9 @@ public abstract class Device
 	}
 
 
-	void notify(SmartHomeEvents event) {
+	void notify(Device device,SmartHomeEvents event) {
 
-		smartHomeMediator.onEventOccurs(event);
+		smartHomeMediator.onEventOccurs(this,event);
 
 	}
 

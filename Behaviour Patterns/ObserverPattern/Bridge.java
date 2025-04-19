@@ -2,7 +2,7 @@ package ObserverPattern;
 
 import java.util.List;
 
-public class Bridge implements Observable<Bridge>
+public class Bridge implements Observable<T extends  Subject>,Observer<FireStation>
 {
 	@Override
 	public void deRegisterObserver(Observer<Bridge> observer)

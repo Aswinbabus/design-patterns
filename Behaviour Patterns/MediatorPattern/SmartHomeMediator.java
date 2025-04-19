@@ -21,8 +21,9 @@ public class SmartHomeMediator
 		this.vacationModeToggle = vacationModeToggle;
 	}
 
-	public void onEventOccurs(SmartHomeEvents event) {
+	public void onEventOccurs(Device device,SmartHomeEvents event) {
 
+		System.out.println("Event triggered by Device" + device);
 		switch(event)
 		{
 
