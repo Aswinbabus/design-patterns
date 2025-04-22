@@ -6,7 +6,7 @@ import VisitorPattern.items.Electronic;
 
 public class DiscountCalculator implements ItemVisitor<Double>
 {
-	total(List<Book>)
+
 	@Override
 	public Double visit(Book book)
 	{
