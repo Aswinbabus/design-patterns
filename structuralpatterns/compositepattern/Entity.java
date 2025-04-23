@@ -3,10 +3,13 @@ package compositepattern;
 import java.util.HashMap;
 import java.util.Map;
 
+// need for entity
 public abstract class Entity implements PermissionGrantee
 {
 
 	private final String name;
+
+	// problem
 	private final Map<String,Permission> userPermissions;
 
 
